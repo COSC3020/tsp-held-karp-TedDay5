@@ -25,13 +25,12 @@ function tsp_hk(distance_matrix) {
 function heldKarp(distance_matrix, cities, start, cache) {
     let key = '${Array.from(cities).join('-')}-${start}';
 
-    if(cache.has(key)) {
-        return cache.get(key);
+    if(cache[key] !== undefined) {
+        return cache[key];
     }
-
     if(cities.length == 2) {
         let remaining = cities.find(c => c !== start);
-        return cache.get(key);
+        return cache[key];
     }
     let minimumTour = Infinity;
 
@@ -52,6 +51,6 @@ function heldKarp(distance_matrix, cities, start, cache) {
             }
         }
     }
-    cache.set(key, minimumTour);
+    cache[key] = minimumTour;
     return minimumTour;
 }
