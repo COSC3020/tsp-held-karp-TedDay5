@@ -23,13 +23,14 @@ function tsp_hk(distance_matrix) {
 }
 
 function heldKarp(distance_matrix, cities, start, cache) {
-    let key = '${Array.from(cities).join('-')}-${start}';
+    let key = JSON.stringify([cities.slice(), start]);
 
     if(cache[key] !== undefined) {
         return cache[key];
     }
     if(cities.length == 2) {
         let remaining = cities.find(c => c !== start);
+        cache[key] = distance_matrix[start][remaining]
         return cache[key];
     }
     let minimumTour = Infinity;
