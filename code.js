@@ -9,11 +9,11 @@ function tsp_hk(distance_matrix) {
 
     function heldKarp(cities, start) {
         if(cities.size === 1) {
-            let remaining = array.from(cities)[0];
+            let remaining = Array.from(cities)[0];
             return distance_matrix[start][remaining];
         }
 
-        let key = '${array.from(cities).join('-')}-${start}'
+        let key = '${Array.from(cities).join('-')}-${start}'
         let minimumTour = Infinity;
 
         if(cache.has(key)) {
@@ -36,7 +36,7 @@ function tsp_hk(distance_matrix) {
     let minimumTour = Infinity;
 
     for (let start = 0; start < l; start++){
-        let cities = new Set([...array(l).keys()].filter((c) => c !== start));
+        let cities = new Set([...Array(l).keys()].filter((c) => c !== start));
         let tour = heldKarp(cities, start);
 
         minimumTour = Math.min(minimumTour, tour);
