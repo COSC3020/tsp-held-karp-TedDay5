@@ -36,16 +36,16 @@ function heldKarp(distance_matrix, cities, start, cache) {
     let minimumTour = Infinity;
 
     for(let city = 0; city < cities.length; city++) {
-        if(city !== start) {
+        if(cities[city] !== start) {
             let citiesSet = [];
 
             for(let newCity = 0; newCity < cities.length; newCity++) {
-                if(newCity !== start) {
-                    citiesSet.push(newCity);
+                if(cities[newCity] !== start) {
+                    citiesSet.push(cities[newCity]);
                 }
             }
 
-            let tour = heldKarp(distance_matrix, citiesSet, city, cache) + distance_matrix[start][city];
+            let tour = heldKarp(distance_matrix, citiesSet, cities[city], cache) + distance_matrix[start][cities[city]];
 
             if(tour < minimumTour) {
                 minimumTour = tour;
