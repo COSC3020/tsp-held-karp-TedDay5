@@ -23,7 +23,7 @@ function tsp_hk(distance_matrix) {
 }
 
 function heldKarp(distance_matrix, cities, start, cache) {
-    let key = JSON.stringify([cities.slice(), start]);
+    let key = JSON.stringify([cities.slice().sort(), start]);
 
     if(cache[key] !== undefined) {
         return cache[key];
