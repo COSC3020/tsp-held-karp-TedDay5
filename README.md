@@ -46,3 +46,14 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+Worst-case asymptotic complexity: $\Theta(2^n * n^2)$
+
+$2^n$ because of searching through each subsets of cities.
+Each subset needs to be looked at to figure out the shorted path.
+$n^2$ because of needing to iterate over each subset to see which cities are within.
+
+Worst-case memory complexity: $\Theta(2^n * n^2)$
+
+The cache storing the subsets of cities which are $2^n$.
+The matrix being $n^2$.
