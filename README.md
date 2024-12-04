@@ -49,6 +49,9 @@ reasoning, to this markdown file.
 
 Worst-case asymptotic complexity: $\Theta(2^n * n^2)$
 
+Sorting the cities helps simplify the complexity from $\Theta(n!)$ since without sorting, the number of permutations of cities is $n!$.
+With memorization the complexity is reduced to $\Theta(2^n * n^2)$.
+
 $2^n$ because of searching through each subsets of cities.
 Each subset needs to be looked at to figure out the shorted path.
 $n^2$ because of needing to iterate over each subset to see which cities are within.
