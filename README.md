@@ -46,3 +46,22 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+Worst-case asymptotic complexity: $\Theta(2^n * n^2)$
+
+Sorting the cities helps simplify the complexity from $\Theta(n!)$ since without sorting, the number of permutations of cities is $n!$.
+With memorization the complexity is reduced to $\Theta(2^n * n^2)$.
+
+$2^n$ because of searching through each subsets of cities.
+Each subset needs to be looked at to figure out the shorted path.
+$n^2$ because of needing to iterate over each subset to see which cities are within.
+
+Worst-case memory complexity: $\Theta(2^n * n^2)$
+
+The cache storing the subsets of cities which are $2^n$.
+The matrix being $n^2$.
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”
